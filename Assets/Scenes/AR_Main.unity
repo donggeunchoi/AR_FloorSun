@@ -625,11 +625,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1548789054}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c365a06314abf2e419ee640fab6adde0, type: 3}
+  m_Script: {fileID: 11500000, guid: 0d0252231189f7b47b67e5f1b0d6e6db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  raycastManager: {fileID: 1548789057}
-  placePrefab: {fileID: 7739064196344233934, guid: b76f5075350f9d54e806c60a49ab4ed5, type: 3}
+  planeManager: {fileID: 1548789058}
+  monsterPrefab: {fileID: 3006041763649091058, guid: 7102626ba30665c4a91d265bc930bdbd, type: 3}
+  groundOffset: 0.5
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
