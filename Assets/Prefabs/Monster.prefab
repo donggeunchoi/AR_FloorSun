@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6968550061272326109}
   - component: {fileID: 5112044113369065230}
   - component: {fileID: 547295511944102471}
+  - component: {fileID: 7186052129193428450}
   m_Layer: 0
   m_Name: Monster
   m_TagString: Untagged
@@ -107,3 +108,17 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &7186052129193428450
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3006041763649091058}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b6c6adac6118674498137893226bffd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ballPrefab: {fileID: 7739064196344233934, guid: b76f5075350f9d54e806c60a49ab4ed5, type: 3}
+  cameraOffset: {x: 0, y: -0.25, z: 0.6}
