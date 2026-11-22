@@ -19,13 +19,35 @@ public class ARMonsterSpawner : MonoBehaviour
     [SerializeField]
     float groundOffset;
 
-    bool hasSpawned;
+    [Header("재소환시간")]
+    [SerializeField]
+    float respawnDelay;
+
+    GameObject currentMonster;
+    bool waitingForRespawn;
+    float respawnTime;
+    bool hasSpawnedOnce;
 
     // Update is called once per frame
     void Update()
     {
-        if (hasSpawned || planeManager == null || monsterPrefab == null)
+        if (planeManager == null || monsterPrefab == null)
             return;
+
+        if (currentMonster == null)
+            return;
+
+        if(hasSpawnedOnce && !waitingForRespawn)
+        {
+            waitingForRespawn = true;
+            respawnTime = Time.time + respawnDelay;
+        }
+
+        if (waitingForRespawn && Time.time < respawnDelay)
+            return;
+
+        if (waitingForRespawn)
+            waitingForRespawn = false;
 
         foreach( ARPlane plane in planeManager.trackables)
         {
@@ -38,7 +60,7 @@ public class ARMonsterSpawner : MonoBehaviour
             Vector3 spawnPosition = plane.transform.TransformPoint(plane.center);
             spawnPosition += Vector3.up * groundOffset;
             Instantiate(monsterPrefab, spawnPosition, Quaternion.identity);
-            hasSpawned = true;
+            hasSpawnedOnce = true;
             break;
 
         }
